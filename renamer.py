@@ -35,16 +35,36 @@ def rename_image(image_path):
     return new_path
     
 
+def rename_image_carpet(file_path):
+    #? aseguramos que file_path si sea un path
+    path_file = Path(file_path)
+    #una lista de las extensiones de los archivos permitidas a modficar
+    extensiones_permitidas =  {".png", ".webp", ".jpg"}
+    """
+    #item for item in es compresion de listas.
+    # el if item.is_file() es para aber que el archivo existe
+    # and item.suffix.lower() existe para tomar la extension del archivo (y ponerla en minisculas) para buscar si existe en extensiones permitidas
+    """
+    archivos = [
+        item for item in path_file.iterdir() 
+        if item.is_file() and item.suffix.lower() in extensiones_permitidas]
+    
+    #llamamos la funcion de rename image en bucle
+    for element in archivos:
+        rename_image(element)
+    return None
     
 
 if __name__ == "__main__":
     # Prueba rápida ingresando la ruta de una imagen concreta
-    ruta_test = input("Ingresa la ruta completa de la imagen a probar: ")
+    ruta_test = input("Ingresa la ruta completa de la carpeta a probar: ")
     if Path(ruta_test).exists():
-        nueva = rename_image(ruta_test)
-        print(f"Imagen renombrada con éxito a: {nueva}")
+        nueva = rename_image_carpet(ruta_test)
+        # for i in nueva:
+        #     print(i)
     else:
         print("La ruta ingresada no existe.")
+
 
 
     
