@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Cpython bytecode
+*.py[cod]
+
+# Entornos virtuales (Virtual Environments)
+venv/
+env/
+ENV/
+.venv/
+
+# Archivos de entorno y configuraciones locales
+.env
+
+# Archivos del sistema operativo (Linux / macOS)
+.DS_Store
+.directory
+
+# Carpetas de editores o IDEs
+.vscode/
+.idea/
