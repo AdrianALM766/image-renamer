@@ -39,7 +39,7 @@ def rename_image_carpet(file_path):
     #? aseguramos que file_path si sea un path
     path_file = Path(file_path)
     #una lista de las extensiones de los archivos permitidas a modficar
-    extensiones_permitidas =  {".png", ".webp", ".jpg"}
+    extensiones_permitidas =  {".png", ".webp", ".jpg", ".jpeg"}
     """
     #item for item in es compresion de listas.
     # el if item.is_file() es para aber que el archivo existe
